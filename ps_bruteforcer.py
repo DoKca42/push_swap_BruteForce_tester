@@ -204,20 +204,20 @@ def DispResumeFail(fail):
     print(colors.reset +"\n")
 
 def Tester(i, val, ch, test):
-	fail = 0
-	out = 0
-	stats_op = []
-	a = 0
-	while a < test:
-		cmd = GenerateRdm(ch, val)
-		cmd.insert(0, './push_swap')
-		out = RunPushSwap(i, cmd, stats_op)
-		if out > fail:
-			fail = out
-		a += 1
-		i += 1
-	DispResume(fail, stats_op, val)
-	return i
+    fail = 0
+    out = 0
+    stats_op = []
+    a = 0
+    while a < test:
+        cmd = GenerateRdm(ch, val)
+        cmd.insert(0, './push_swap')
+        out = RunPushSwap(i, cmd, stats_op)
+        if out > fail:
+            fail = out
+        a += 1
+        i += 1
+    DispResume(fail, stats_op, val)
+    return i
 
 
 def FailTest(cmd, i, type_res, err_msg, fail):
@@ -268,13 +268,42 @@ def FailTester(i):
     DispResumeFail(fail)
     return i
 
+print(colors.bold + colors.fg.green+"/* ************************************************************************ *\\")
+print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"   _____   _____   ____             _       ______                        "+colors.bold + colors.fg.green+"*\\")
+print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"  |  __ \ / ____| |  _ \           | |     |  ____|                       "+colors.bold + colors.fg.green+"*\\")
+print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"  | |__) | (___   | |_) |_ __ _   _| |_ ___| |__ ___  _ __ ___ ___ _ __   "+colors.bold + colors.fg.green+"*\\")
+print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"  |  ___/ \___ \  |  _ <| '__| | | | __/ _ \  __/ _ \| '__/ __/ _ \ '__|  "+colors.bold + colors.fg.green+"*\\")
+print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"  | |     ____) | | |_) | |  | |_| | ||  __/ | | (_) | | | (_|  __/ |     "+colors.bold + colors.fg.green+"*\\")
+print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"  |_|    |_____/  |____/|_|   \__,_|\__\___|_|  \___/|_|  \___\___|_|     "+colors.bold + colors.fg.green+"*\\")
+print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"                                                                          "+colors.bold + colors.fg.green+"*\\")
+print(colors.bold +colors.fg.green+"/* ************************************************************************ *\\")
+
+
+#print(colors.bold + colors.fg.green+"/* ***************************************************************************************************************************************** *\\")
+#print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"    _______    ______         _______                         __                ________                                                   "+colors.bold + colors.fg.green+"*\\")
+#print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"   /       \  /      \       /       \                       /  |              /        |                                                  "+colors.bold + colors.fg.green+"*\\")
+#print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"   $$$$$$$  |/$$$$$$  |      $$$$$$$  |  ______   __    __  _$$ |_     ______  $$$$$$$$/______    ______    _______   ______    ______     "+colors.bold + colors.fg.green+"*\\")
+#print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"   $$ |__$$ |$$ \__$$/       $$ |__$$ | /      \ /  |  /  |/ $$   |   /      \ $$ |__  /      \  /      \  /       | /      \  /      \    "+colors.bold + colors.fg.green+"*\\")
+#print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"   $$    $$/ $$      \       $$    $$< /$$$$$$  |$$ |  $$ |$$$$$$/   /$$$$$$  |$$    |/$$$$$$  |/$$$$$$  |/$$$$$$$/ /$$$$$$  |/$$$$$$  |   "+colors.bold + colors.fg.green+"*\\")
+#print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"   $$$$$$$/   $$$$$$  |      $$$$$$$  |$$ |  $$/ $$ |  $$ |  $$ | __ $$    $$ |$$$$$/ $$ |  $$ |$$ |  $$/ $$ |      $$    $$ |$$ |  $$/    "+colors.bold + colors.fg.green+"*\\")
+#print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"   $$ |      /  \__$$ |      $$ |__$$ |$$ |      $$ \__$$ |  $$ |/  |$$$$$$$$/ $$ |   $$ \__$$ |$$ |      $$ \_____ $$$$$$$$/ $$ |         "+colors.bold + colors.fg.green+"*\\")
+#print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"   $$ |      $$    $$/       $$    $$/ $$ |      $$    $$/   $$  $$/ $$       |$$ |   $$    $$/ $$ |      $$       |$$       |$$ |         "+colors.bold + colors.fg.green+"*\\")
+#print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"   $$/        $$$$$$/        $$$$$$$/  $$/        $$$$$$/     $$$$/   $$$$$$$/ $$/     $$$$$$/  $$/        $$$$$$$/  $$$$$$$/ $$/          "+colors.bold + colors.fg.green+"*\\")
+#print(colors.bold + colors.fg.green+"/*"+"\x1b[35m"+"                                                                                                                                           "+colors.bold + colors.fg.green+"*\\")
+#print(colors.bold +colors.fg.green+"/* ***************************************************************************************************************************************** *\\")
+print("\n")
 os.chdir("..")
+
 if MakeAll() != 1:
-    #print()
+    print(colors.reset+colors.fg.darkgrey+  " __________________________________________________")
+    print(colors.fg.darkgrey+               "│                                                  │")
+    print(colors.fg.darkgrey+               "│                  "+colors.reset+ "MANDATORY PART"+colors.fg.darkgrey+"                  │")
+    print(colors.fg.darkgrey+               "│                                                  │")
+    print(colors.fg.darkgrey+               " ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾ ")
     i = 1
     i = FailTester(i)
-    i = Tester(i, 2,	0,	250)
-    i = Tester(i, 3,	0,	250)
-    i = Tester(i, 5,	0,	250)
-    i = Tester(i, 100,	0,	250)
-    i = Tester(i, 500,	0,	250)
+    i = Tester(i, 2,    0,  250)
+    i = Tester(i, 3,    0,  250)
+    i = Tester(i, 5,    0,  250)
+    i = Tester(i, 100, 0,  250)
+    i = Tester(i, 500, 0,  250)
